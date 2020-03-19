@@ -22,6 +22,8 @@ cc.Class({
     this.createSquare()
   },
 
+
+  // 随机创建方块
   createSquare() {
 
     let squareIndex = Math.floor(Math.random() * 7)
@@ -33,7 +35,7 @@ cc.Class({
     d.init(this)
 
     this.prefab.parent = this.node
-    console.log(this.node)
+    // console.log(this.node)
     this.prefab.x = -80
     this.prefab.y = this.node.height / 2
 
@@ -41,11 +43,6 @@ cc.Class({
     this.timerCount = 0
 
   },
-
-  startTime() {
-    // setInterval(function () {})
-  },
-
 
   start() {
 
@@ -59,6 +56,7 @@ cc.Class({
     this.timerCount += dt * 10
 
     if (this.timerCount / 8 >= 1) {
+      // console.log(this.timerCount)
       this.timerCount = 0
       this.prefab.y += -80
     }
@@ -66,7 +64,8 @@ cc.Class({
   },
 
   onCollisionEnter(other, self) {
-    self.getComponent('CollisionProxy').node.group = 'ground'
+    // console.log(other)
+    self.getComponent('CollisionProxy').node.group = 'staticSquare'
     this.createSquare()
   },
 

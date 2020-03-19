@@ -18,6 +18,7 @@ cc.Class({
   },
 
   onCollisionEnter(other, self) {
+    // console.log(other.node.groupIndex)
     this.game.onCollisionEnter(other, self)
   },
   
