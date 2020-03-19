@@ -20,6 +20,7 @@ cc.Class({
   onCollisionEnter(other, self) {
     this.game.onCollisionEnter(other, self)
   },
+  
   // onCollisionStay(other, self) {
   //   console.log('现在正在有交集');
   // },
