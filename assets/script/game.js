@@ -35,7 +35,7 @@ cc.Class({
     d.init(this)
 
     this.prefab.parent = this.node
-    // console.log(this.node)
+    console.log(this.node)
     this.prefab.x = -80
     this.prefab.y = this.node.height / 2
 
@@ -64,9 +64,11 @@ cc.Class({
   },
 
   onCollisionEnter(other, self) {
-    // console.log(other)
-    self.getComponent('CollisionProxy').node.group = 'staticSquare'
-    this.createSquare()
+    if (self.node.groupIndex == 1) {
+      this.createSquare()
+      self.getComponent('CollisionProxy').node.group = 'staticSquare'
+      
+    }
   },
 
 });
