@@ -19,12 +19,14 @@ cc.Class({
 
   onCollisionEnter(other, self) {
     // console.log(self.node)
+    // this.game.onCollisionEnter(other, self)
+  },
+
+  onCollisionStay(other, self) {
+    // console.log('现在正在有交集');
+    console.log(other, self)
     this.game.onCollisionEnter(other, self)
   },
-  
-  // onCollisionStay(other, self) {
-  //   console.log('现在正在有交集');
-  // },
   // onCollisionExit(other, self) {
   //   console.log('现在刚离开')
   // }
